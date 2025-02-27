@@ -8,7 +8,7 @@ import org.apache.commons.csv.CSVFormat
 
 
 fun main() {
-    val dataset = Read.csv("./parkinsons_updrs.data", CSVFormat.DEFAULT.withFirstRecordAsHeader())
+    val dataset = Read.csv("/Users/hq-k4j5ywyv2p/Documents/dz_kotlin/parkinsons_updrs.data", CSVFormat.DEFAULT.withFirstRecordAsHeader())
     val formula = Formula.lhs("status")
     
     val res = CrossValidation.regression(
