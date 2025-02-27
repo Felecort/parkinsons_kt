@@ -1,6 +1,6 @@
 package smile
 
-import smile.regression.RandomForest
+import smile.classification.GradientTreeBoost
 import smile.data.formula.Formula
 import smile.io.Read
 import smile.validation.CrossValidation
@@ -12,7 +12,7 @@ fun main() {
 
     val res = CrossValidation.regression(
         6, formula, dataset,
-        { f, data -> RandomForest.fit(f, data) }
+        { f, data -> GradientTreeBoost.fit(f, data) }
     )
 
     println(res)
