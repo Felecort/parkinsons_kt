@@ -9,13 +9,10 @@ import org.apache.commons.csv.CSVFormat
 
 fun main() {
     val dataset = Read.csv("./parkinsons_updrs.data", CSVFormat.DEFAULT.withFirstRecordAsHeader())
-
-    println(dataset)
-
     val formula = Formula.lhs("status")
-
+    
     val res = CrossValidation.regression(
-        10, formula, dataset,
+        6, formula, dataset,
         { f, data -> RandomForest.fit(f, data) })
 
     println(res)
